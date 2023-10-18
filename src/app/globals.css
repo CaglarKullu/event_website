@@ -3,10 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --primary-color-rgb: 186, 155, 118;        /* hsl(46, 33%, 63%) in RGB */
+  --secondary-color-rgb: 233, 231, 233;      /* hsl(0, 2%, 91%) in RGB */
+  --footer-background-color-rgb: 37, 34, 36; /* hsl(340, 4%, 14%) in RGB */
+  --body-background-color-rgb: 255, 255, 255;/* hsl(0, 0%, 100%) in RGB */
+  --text-color-rgb: 79, 79, 79;              /* hsl(0, 0%, 31%) in RGB */
 }
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -16,12 +19,17 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+  @layer components{
+    .my-footer{
+      background-color:  rgb(var(--footer-background-color-rgb));
+      color: whitesmoke;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .item {
+      width: 60%; /* Adjust this based on your desired content width */
+      text-align: justify;
+    }
+  }
+  
